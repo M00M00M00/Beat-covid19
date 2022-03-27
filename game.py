@@ -43,24 +43,24 @@ def playagain():
 
     screen = pygame.display.set_mode((screen_width, screen_height))
     pygame.display.set_caption("BEAT COVID-19!")
-    start_background = pygame.image.load("data\\image\\start background.png")
+    start_background = pygame.image.load("./data/image/start background.png")
     start_background = pygame.transform.scale(start_background,(screen_width,screen_height))
-    background = pygame.image.load("data\\image\\background.png")
+    background = pygame.image.load("./data/image/background.png")
     background = pygame.transform.scale(background,(screen_width,screen_height))
     # background = pygame.image.load("data\\image\\background2.jpg")
     # background = pygame.transform.scale(background,(screen_width,screen_height))
-    player_image = pygame.image.load("data\\image\\player.png")
+    player_image = pygame.image.load("./data/image/player.png")
     player_image = pygame.transform.scale(player_image,(player_width,player_height))
-    virus_image = pygame.image.load("data\\image\\virus.png")
+    virus_image = pygame.image.load("./data/image/virus.png")
     virus_image = pygame.transform.scale(virus_image,(virus_width,virus_height))
-    bubble_image = pygame.image.load("data\\image\\bubble.png")
+    bubble_image = pygame.image.load("./data/image/bubble.png")
     bubble_image = pygame.transform.scale(bubble_image,(bubble_width,bubble_width))
-    pygame.mixer.music.load('data\\sound\\bgm.wav')
+    pygame.mixer.music.load('./data/sound/bgm.wav')
     pygame.mixer.music.play(-1)
-    pop_sound = pygame.mixer.Sound('data\\sound\\pop.wav')
-    fail_sound = pygame.mixer.Sound('data\\sound\\fail.wav')
-    shoot_sound = pygame.mixer.Sound('data\\sound\\shoot.wav')
-    success_sound = pygame.mixer.Sound('data\\sound\\success.wav')
+    pop_sound = pygame.mixer.Sound('./data/sound/pop.wav')
+    fail_sound = pygame.mixer.Sound('./data/sound/fail.wav')
+    shoot_sound = pygame.mixer.Sound('./data/sound/shoot.wav')
+    success_sound = pygame.mixer.Sound('./data/sound/success.wav')
 
     score = 0
     to_x = 0
@@ -226,7 +226,7 @@ def playagain():
                             bubble_activate[i] = False
                             pop_sound.play()
                             score += 1
-        font = pygame.font.Font('data\\font\\godoRounded R.ttf',60)
+        font = pygame.font.Font('./data/font/godoRounded R.ttf',60)
         text = font.render(str("Score: " + str(score)),True,WHITE)
         screen.blit(text,(10,-10))
         pygame.display.update()
@@ -246,10 +246,10 @@ def playagain():
     run = True
     while run:
         if gameovercheck:
-            font = pygame.font.Font('data\\font\\godoRounded R.ttf',120)
+            font = pygame.font.Font('./data/font/godoRounded R.ttf',120)
             text = font.render(str("Mission Success"),True,RED)
             screen.blit(text,(150,390))
-            font2 = pygame.font.Font('data\\font\\godoRounded R.ttf',70)
+            font2 = pygame.font.Font('./data/font/godoRounded R.ttf',70)
             text2 = font2.render(str("press 'enter' to retry"),True,RED)
             screen.blit(text2,(250,485))
             pygame.display.update()
@@ -263,10 +263,10 @@ def playagain():
                         run = False
 
         if not gameovercheck:
-            font = pygame.font.Font('data\\font\\godoRounded R.ttf',170)
+            font = pygame.font.Font('./data/font/godoRounded R.ttf',170)
             text = font.render(str("Game over!"),True,RED)
             screen.blit(text,(170,350))
-            font2 = pygame.font.Font('data\\font\\godoRounded R.ttf',70)
+            font2 = pygame.font.Font('data/font/godoRounded R.ttf',70)
             text2 = font2.render(str("press 'enter' to retry"),True,RED)
             screen.blit(text2,(250,485))
             pygame.display.update()
